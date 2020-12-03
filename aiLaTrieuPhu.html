@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ai là triệu phu </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Question.js"></script>
+    <script src="Game.js"></script>
+
+</head>
+<body>
+<h1 id="timeCountDown" style="text-align: center; color: red"></h1>
+<div id="quiz">
+<div id="question" style="text-align: center; color: black; background-color: bisque">Câu hỏi:</div>
+    <button class="answer" onclick="chooseAnswer(this.id)" id="answer_1">A. </button><br>
+    <button class="answer" onclick="chooseAnswer(this.id)" id="answer_2">B. </button><br>
+    <button class="answer" onclick="chooseAnswer(this.id)"  id="answer_3">C. </button><br>
+    <button class="answer" onclick="chooseAnswer(this.id)" id="answer_4">D. </button>
+</div>
+<script>
+    let timeCount;
+    let message;
+
+    let timeID = setInterval(function () {
+        document.getElementById('timeCountDown').innerHTML = timeCount + " giây";
+        timeCount--;
+        countdown();
+    }, 1000);
+
+    function countdown() {
+        if (timeCount < 0) {
+            clearInterval(timeID);
+            message = window.confirm('HẾT GIỜ RỒI BÉ YÊU :P');
+            resetGame();
+        }
+    }
+
+    let quiz1 = new Question('Việt Nam có bao nhiêu tỉnh thành ?',['A. 40','B. 58','C. 64','D. 63'], 'D. 63');
+    let quiz2 = new Question('Quận nào ở Hà Nội có hồ Hoàn Kiếm ?',['A. Hai Bà Trưng','B. Ba Đình','C. Hoàn Kiếm','D. Hoàng Mai'], 'C. Hoàn Kiếm');
+    let quiz3 = new Question('Hãng xe nào của Đức ?',['A. Porsche','B. TOY','C. Ford','D. Mazda'], 'A. Porsche');
+    let quiz4 = new Question('Ngày tháng năm sinh chủ tịch Hồ Chí Minh ?',['A. 21/2/1890','B. 19/5/1890','C. 19/5/1895','D. 19/5/1892'], 'B. 19/5/1890');
+    let quiz5 = new Question('Vinfast là hãng xe của nước nào ?',['A. Trung Quốc','B. Đức','C. Việt Nam','D. Anh'], 'C. Việt Nam');
+    let quiz6 = new Question('Chủ tịch nước Việt Nam hiện tại là ai ?',['A. Nguyễn Xuân Phúc','B. Nguyễn Phú Trọng','C. Nguyễn Tấn Dũng','D. Nguyễn Thị Kim Ngân'], 'B. Nguyễn Phú Trọng');
+    let quiz7 = new Question('Điểm cực bắc của Việt Nam là vùng nào ?',['A. Lũng Cú','B. Tả Phìn','C. Mường Thanh','D. Ô Quy Hồ'], 'A. Lũng Cú');
+    let quiz8 = new Question('Tỉnh nào nước ta vừa có biển vừa có rừng ?',['A. Quảng Ninh','B. Nha Trang','C. Hải Phòng','D. Bình Phước'], 'A. Quảng Ninh');
+    let quiz9 = new Question('Tỉnh Quảng Ninh có mấy thành phố ?',['A. 3','B. 4','C. 2','D. 1'], 'B. 4');
+    let quiz10 = new Question('Đường Nhuệ là người ở tỉnh nào ?',['A. Hà Nội','B. Nam Định','C. Thái Bình','D. Hà Nam'], 'C. Thái Bình');
+    let quiz11 = new Question('Tp Hồ Chí Minh còn có tên gọi khác là gì ?',['A. Sài Gòn','B. Ba Đình','C. Mường Thanh','D. Nam Kỳ'], 'A. Sài Gòn');
+    let quiz12 = new Question('Trận Điện Biên Phủ trên không diễn ra năm nào ?',['A. 1972','B. 1968','C. 1956','D. 1969'], 'A. 1972');
+    let quiz13 = new Question('Trận Điện Biên Phủ trên không diễn ra trong bao nhiêu ngày đêm ?',['A. 10','B. 12','C. 14','D. 16'], 'B. 12');
+    let quiz14 = new Question('Điền vào dấu ... : Người đẹp vì lụa, lúa tốt vì..... ?',['A. Cám','B. Phân','C. Đạm','D. Tro'], 'B. Phân');
+    let quiz15 = new Question('Quần đảo Hoàng Sa thuộc tỉnh nào ?',['A. Khánh Hoà','B. Bình Định','C. Đà Nẵng','D. Ninh Thuận'], 'C. Đà Nẵng');
+    let quiz16 = new Question('Quần đảo Trường Sa thuộc tỉnh nào ?',['A. Khánh Hoà','B. Bình Định','C. Đà Nẵng','D. Ninh Thuận'], 'A. Khánh Hoà');
+    let quiz17 = new Question('Tên thật của Chủ Tịch Hồ Chí Minh là gì ?',['A. Nguyễn Sinh Cung','B. Nguyễn Sinh Sắc','C. Nguyễn Sinh Hùng','D. Nguyễn Sinh Thuận'], 'A. Nguyễn Sinh Cung');
+    let quiz18 = new Question('Chủ Tịch Quốc Hội Việt Nam là ai ?',['A. Nguyễn Xuân Phúc','B. Nguyễn Phú Trọng','C. Nguyễn Tấn Dũng','D. Nguyễn Thị Kim Ngân'], 'D. Nguyễn Thị Kim Ngân');
+    let quiz19 = new Question('Một năm có bao nhiêu tháng có 28 ngày ?',['A. 1','B. 12','C. 2','D. 4'], 'B. 12');
+    let quiz20 = new Question('Tác phẩm tắt đèn là của tác giả nào ?',['A. Vũ Trọng Phụng','B. Nam Cao','C. Ngô Tất Tố','D. Ngô Quyền'], 'C. Ngô Tất Tố');
+    let games = new Game(10);
+    games.addQuestions(quiz1);
+    games.addQuestions(quiz2);
+    games.addQuestions(quiz3);
+    games.addQuestions(quiz4);
+    games.addQuestions(quiz5);
+    games.addQuestions(quiz6);
+    games.addQuestions(quiz7);
+    games.addQuestions(quiz8);
+    games.addQuestions(quiz9);
+    games.addQuestions(quiz10);
+    games.addQuestions(quiz11);
+    games.addQuestions(quiz12);
+    games.addQuestions(quiz13);
+    games.addQuestions(quiz14);
+    games.addQuestions(quiz15);
+    games.addQuestions(quiz16);
+    games.addQuestions(quiz17);
+    games.addQuestions(quiz18);
+    games.addQuestions(quiz19);
+    games.addQuestions(quiz20);
+
+    console.log(games);
+
+    function Screen (index){
+        timeCount = 30;
+        document.getElementById('question').innerHTML = games.Questions[index].content;
+        for (let i = 1; i <= games.Questions[index].answer.length ; i++) {
+        document.getElementById("answer_"+i).innerHTML = games.Questions[index].answer[i-1];
+        }
+    }
+
+
+
+    function nextQuestion(){
+       games.nextQuestion();
+       Screen(games.current);
+    }
+
+    function resetGame(){
+        games.resetGame();
+        Screen(games.current);
+
+    }
+
+    function chooseAnswer(id){
+        let answer = document.getElementById(id).innerHTML;
+        games.chooseAnswer(answer)
+        if(games.checkAnswer(answer)){
+            nextQuestion();
+        }else {
+            resetGame()
+        }
+
+    }
+    Screen(0);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

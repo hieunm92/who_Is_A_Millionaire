@@ -1,0 +1,47 @@
+body{
+    background-image: url("https://vignette.wikia.nocookie.net/ai-la-trieu-phu/images/3/3a/H%C3%ACnh_hi%E1%BB%87u_Ai_l%C3%A0_tri%E1%BB%87u_ph%C3%BA_2020_%28Kh%C3%B4ng_logo%29.png/revision/latest?cb=20200518022416&path-prefix=vi");
+    background-size: cover ;
+
+}
+button.answer {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    margin-top: 10px;
+    text-align:left;
+    background-color: darkgray;
+}
+
+div#quiz {
+    width: 600px;
+    height: 500px;
+    border: solid;
+    margin: auto;
+}
+
+div#question {
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 60px;
+    background-color: yellow;
+    color: black;
+    border-radius: 100px;
+
+
+}
+
+h1#timeCountDown {
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 60px;
+    background-color: yellow;
+    color: black;
+    border-radius: 100px;
+}

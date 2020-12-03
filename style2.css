@@ -1,0 +1,27 @@
+body {
+    background-image: url("https://www.xaluan.com/images/news/Image/2019/09/10/65d76deab80a43.img.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+h1 {
+    font-size: 120px;;
+    text-align: center;;
+    background-color: white;
+    color: aqua;
+    text-shadow: 5px 5px violet;
+
+}
+
+button {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 60px;
+    background-color: yellow;
+    color: black;
+    border-radius: 100px;
+}
