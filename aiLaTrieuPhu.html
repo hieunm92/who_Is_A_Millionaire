@@ -18,26 +18,9 @@
     <button class="answer" onclick="chooseAnswer(this.id)" id="answer_4">D. </button>
 </div>
 <script>
-    let timeCount;
-    let message;
-
-    let timeID = setInterval(function () {
-        document.getElementById('timeCountDown').innerHTML = timeCount + " giây";
-        timeCount--;
-        countdown();
-    }, 1000);
-
-    function countdown() {
-        if (timeCount < 0) {
-            clearInterval(timeID);
-            message = window.confirm('HẾT GIỜ RỒI BÉ YÊU :P');
-            resetGame();
-        }
-    }
-
     let quiz1 = new Question('Việt Nam có bao nhiêu tỉnh thành ?',['A. 40','B. 58','C. 64','D. 63'], 'D. 63');
     let quiz2 = new Question('Quận nào ở Hà Nội có hồ Hoàn Kiếm ?',['A. Hai Bà Trưng','B. Ba Đình','C. Hoàn Kiếm','D. Hoàng Mai'], 'C. Hoàn Kiếm');
-    let quiz3 = new Question('Hãng xe nào của Đức ?',['A. Porsche','B. TOY','C. Ford','D. Mazda'], 'A. Porsche');
+    let quiz3 = new Question('Hãng xe nào của Đức ?',['A. Porsche','B. TOY','C. Ford','D. Mazda'], 'A. Pche');
     let quiz4 = new Question('Ngày tháng năm sinh chủ tịch Hồ Chí Minh ?',['A. 21/2/1890','B. 19/5/1890','C. 19/5/1895','D. 19/5/1892'], 'B. 19/5/1890');
     let quiz5 = new Question('Vinfast là hãng xe của nước nào ?',['A. Trung Quốc','B. Đức','C. Việt Nam','D. Anh'], 'C. Việt Nam');
     let quiz6 = new Question('Chủ tịch nước Việt Nam hiện tại là ai ?',['A. Nguyễn Xuân Phúc','B. Nguyễn Phú Trọng','C. Nguyễn Tấn Dũng','D. Nguyễn Thị Kim Ngân'], 'B. Nguyễn Phú Trọng');
@@ -55,7 +38,9 @@
     let quiz18 = new Question('Chủ Tịch Quốc Hội Việt Nam là ai ?',['A. Nguyễn Xuân Phúc','B. Nguyễn Phú Trọng','C. Nguyễn Tấn Dũng','D. Nguyễn Thị Kim Ngân'], 'D. Nguyễn Thị Kim Ngân');
     let quiz19 = new Question('Một năm có bao nhiêu tháng có 28 ngày ?',['A. 1','B. 12','C. 2','D. 4'], 'B. 12');
     let quiz20 = new Question('Tác phẩm tắt đèn là của tác giả nào ?',['A. Vũ Trọng Phụng','B. Nam Cao','C. Ngô Tất Tố','D. Ngô Quyền'], 'C. Ngô Tất Tố');
-    let games = new Game(10);
+
+    let games = new Game(20);
+
     games.addQuestions(quiz1);
     games.addQuestions(quiz2);
     games.addQuestions(quiz3);
@@ -110,17 +95,25 @@
         }
 
     }
+
+    let timeCount;
+    let message;
+
+    let timeID = setInterval(function () {
+        document.getElementById('timeCountDown').innerHTML = timeCount + " giây";
+        timeCount--;
+        countdown();
+    }, 1000);
+
+    function countdown() {
+        if (timeCount < 0) {
+            clearInterval(timeID);
+            message = window.confirm('HẾT GIỜ RỒI BÉ YÊU :P');
+            resetGame();
+        }
+    }
     Screen(0);
 </script>
-
-
-
-
-
-
-
-
-
 
 
 </body>
